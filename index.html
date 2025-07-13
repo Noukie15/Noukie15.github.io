@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Thom's Cart Coin Collection</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="slide-in-left">You've found a ThomCoin or TommieToken!</h1>
+    <p class="slide-in-right">Discover which coin you have and read the story behind the text.</p>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>About the Coins</h2>
+      <div class="coin-models">
+        <div class="coin-model">
+          <model-viewer
+              src="./assets/models/thomcoin-front.glb"
+              alt="ThomCoin front view"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1">
+          </model-viewer>
+          <h3>ThomCoin</h3>
+        </div>
+        <div class="coin-model">
+          <model-viewer
+              src="./assets/models/tommietoken-front.glb"
+              alt="TommieToken front view"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1">
+          </model-viewer>
+          <h3>TommieToken</h3>
+        </div>
+      </div>
+      <p>
+        There are two types of shopping cart coins designed by Thomas:
+        <strong>ThomCoin</strong> and <strong>TommieToken</strong>. They're 3D-printed, fit perfectly in shopping carts, and each has a unique message on the back. They're not legal tender — but they're worth their weight in gold when you're missing that one coin.
+      </p>
+    </section>
+
+    <section>
+      <h2>The Four Texts</h2>
+      <div class="coin-models">
+        <div class="coin-model">
+          <model-viewer
+              src="./assets/models/unlock-back.glb"
+              alt="Unlock Your Cart back view"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1">
+          </model-viewer>
+          <h3>"Unlock Your Cart"</h3>
+          <p class="coin-description">
+            <span class="tagline">This is the original coin. The key to shopping happiness.</span>
+            No more lugging around your shopping basket like a nomad — this coin unlocks not just carts, but a new era of convenience.
+            Some say carrying this coin makes you 30% more efficient at shopping. Or at least you'll never have to ask: "Anyone got a coin?"
+          </p>
+        </div>
+
+        <div class="coin-model">
+          <model-viewer
+              src="./assets/models/not-for-crypto-back.glb"
+              alt="Not for crypto back view"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1">
+          </model-viewer>
+          <h3>"Not for crypto, just for carts"</h3>
+          <p class="coin-description">
+            <span class="tagline">Not a digital currency, but with real value (especially at the supermarket).</span>
+            You can't trade this token on an exchange, and it's not accepted by Elon Musk – but pop it in a shopping cart and watch the magic happen.
+            In a world full of NFTs and DOGE, this is simply a <strong>PMC</strong>: a Physical Money for Carts.
+          </p>
+        </div>
+
+        <div class="coin-model">
+          <model-viewer
+              src="./assets/models/return-me-back.glb"
+              alt="Return me back view"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1">
+          </model-viewer>
+          <h3>"Return me"</h3>
+          <p class="coin-description">
+            <span class="tagline">This coin is homesick.</span>
+            Maybe you found it on the street. Or in a parking lot. It probably rolled out of someone's pocket or was adopted by a random cart user.
+            If you don't need it, pass it on. Or return it to Thomas (who's probably run back to the store 3 times looking for it).
+          </p>
+        </div>
+
+        <div class="coin-model">
+          <model-viewer
+              src="./assets/models/property-of-thomas-back.glb"
+              alt="Property of Thomas back view"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1">
+          </model-viewer>
+          <h3>"Property of Thomas"</h3>
+          <p class="coin-description">
+            <span class="tagline">This coin belongs to Thomas.</span>
+            But don't worry: using it won't get you arrested. It's more symbolic – a little piece of art in circulation, sponsored by Thomas himself.
+            Feel free to use it, admire it, photograph it, or return it. (Or all four.)
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Thomas – creator of ThomCoin and TommieToken. Share the coin, not the blame.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,243 @@
+:root {
+  --primary-color: #2196f3;
+  --secondary-color: #1976d2;
+  --background-color: #f5f5f5;
+  --card-color: #ffffff;
+  --text-color: #333333;
+  --padding-mobile: 1rem;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.coin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.coin {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.coin:hover {
+  transform: translateY(-5px);
+}
+
+.coin h2 {
+  margin-top: 1rem;  /* Adjusted to accommodate the model viewer */
+  color: #2196f3;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.coin-models {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.coin-model {
+  background-color: var(--card-color);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.coin-model:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+model-viewer {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  --poster-color: transparent;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+.coin-description {
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+.tagline {
+  display: block;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--card-color);
+  margin-top: 3rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-left.visible,
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.stagger-animation {
+  transition-delay: calc(var(--order) * 0.1s);
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 2rem var(--padding-mobile);
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding: 1rem var(--padding-mobile);
+  }
+
+  .coin-models {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .coin-model {
+    padding: 1rem;
+  }
+
+  model-viewer {
+    height: 250px;
+    width: 250px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .coin-description {
+    font-size: 0.95rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  model-viewer {
+    height: 200px;
+    width: 200px;
+  }
+
+  .coin-model {
+    margin: 0 -0.5rem;
+    border-radius: 10px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .coin-model:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  model-viewer {
+    touch-action: pan-y pinch-zoom;
+  }
+}
